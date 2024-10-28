@@ -1,0 +1,54 @@
+
+.serviced {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 400px;
+    align-items: center;
+}
+
+.servicio {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 25px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.servicio h2 {
+    margin-top: 0;
+    color: #620D87;
+}
+p {
+    font-size: 16px;
+}
+.price {
+    font-size: 1.5rem;
+    color: #28a745;
+    font-weight: bold;
+}
+
+.grid-steps {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    text-align: center;
+}
+.step {
+    padding: 30px;
+    color: white;
+}
+.step p {
+    font-size: 13px;
+    margin-top: 15px;
+}
+h1 {
+    color:white;
+    text-align: center;
+    font-size: 50px;
+}
+.icon {
+    width: 20px;
+}
+
+

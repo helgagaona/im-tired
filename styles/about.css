@@ -1,0 +1,32 @@
+
+.team {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0 auto;
+    justify-content: center;
+    text-align: center;
+}
+.member {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    width: 340px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 19px;
+}
+.member h2 {
+    margin-top: 0;
+}
+.team-pic {
+    border-radius: 150px;
+    object-fit: cover;
+    width: 230px;
+    height: 230px;
+    margin-bottom: 20px;
+}
+.mail {
+    font-style: oblique;
+    color: #620D87;
+}

@@ -1,0 +1,41 @@
+body  {
+    background-image: url("paper.gif");
+  }
+.container {
+    width:60%;
+    min-width: 500px;
+    text-align: center;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 25px;
+}
+
+.form {
+    padding: 50px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    border: solid 1px #bbbbbb;
+    cursor: pointer;
+}
+
+button {
+    width: 200px;
+    font-size: 1.2rem;
+    background: #620D87;
+    border-radius: 500px;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
