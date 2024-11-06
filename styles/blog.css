@@ -1,0 +1,22 @@
+.grid-container {
+    width: 95%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 15px;
+}
+.grid-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 25px;
+}
+.read:hover {
+    text-decoration: underline;
+}
+h2 {
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+img {
+    width:100%;
+    border-radius: 10px;
+}
