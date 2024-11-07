@@ -2,9 +2,10 @@
 .team {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    height: 100%;
     margin: 0 auto;
     justify-content: center;
-    text-align: center;
+
 }
 .member {
     background-color: white;
@@ -29,4 +30,8 @@
 .mail {
     font-style: oblique;
     color: #620D87;
+}
+.footer {
+    position: fixed;
+    bottom:0;
 }
