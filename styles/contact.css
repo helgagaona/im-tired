@@ -40,7 +40,12 @@ button {
     cursor: pointer;
 }
 .footer {
-    margin
-    position: fixed;
-    bottom:0;
+    position: absolute;
+    top: 800px;
+}
+.gracias {
+    padding:30px;
+}
+.check-icon {
+    margin-top: 20px;
 }
