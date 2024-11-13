@@ -63,10 +63,7 @@
             <button type="submit">Enviar Mensaje</button>
             <input type="hidden" name="_next" value="https://yourdomain.co/thanks.html">
         </form>
-        <!-- Loading message overlay -->
-        <div id="loadingMessage" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); color: white; font-size: 24px; display: flex; align-items: center; justify-content: center;">
-            Tu mensaje se está enviando...
-        </div>
+
 
 
     </div>
@@ -74,20 +71,7 @@
         <!-- Footer -->
         <footer class="footer">
             <p>2024 duxi studio</p>
-        </footer>
-        <script>
-            function showLoadingMessage(event) {
-                // Prevent default form submission behavior to briefly show the message
-                event.preventDefault();
-                document.getElementById('loadingMessage').style.display = 'flex';
-                
-                // Use a slight delay to allow the loading message to show before submission
-                setTimeout(function() {
-                    event.target.submit(); // Continue with the form submission
-                }, 300); // Adjust the delay if needed
-            }
-        </script>
-    
+        </footer>    
     </body>
     </html>
     
