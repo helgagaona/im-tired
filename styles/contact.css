@@ -3,7 +3,7 @@ body  {
   }
 .container {
     width:60%;
-    min-width: 500px;
+    min-width: 400px;
     text-align: center;
     margin: 0 auto;
     background-color: white;
@@ -48,4 +48,9 @@ button {
 }
 .check-icon {
     margin-top: 20px;
+}
+@media (max-width: 768px) {
+    .container {
+        width: 80%;
+    }
 }

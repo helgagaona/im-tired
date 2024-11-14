@@ -28,5 +28,11 @@ img {
     font-size: 14px;
     margin-bottom: 15px;
 }
-.footer {
-}
+@media (max-width: 768px) {
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      margin: 0 auto;
+      width: 90%;
+    }
+  }
