@@ -1,17 +1,17 @@
-body  {
-    background-image: url("paper.gif");
-  }
+
 .container {
     width:60%;
     min-width: 400px;
     text-align: center;
     margin: 0 auto;
-    background-color: white;
-    border-radius: 25px;
+    height: 760px;
 }
 
 .form {
     padding: 50px;
+    border-radius: 25px;
+    height: 780px;
+    background-color: white;
 }
 
 label {
@@ -28,6 +28,9 @@ input, textarea {
     border: solid 1px #bbbbbb;
     cursor: pointer;
 }
+textarea {
+    height: 180px;
+}
 
 button {
     width: 200px;
@@ -39,10 +42,6 @@ button {
     border: none;
     cursor: pointer;
 }
-.footer {
-    position: absolute;
-    top: 800px;
-}
 .gracias {
     padding:30px;
 }
@@ -52,5 +51,9 @@ button {
 @media (max-width: 768px) {
     .container {
         width: 80%;
+        height: 900px;
+    }
+    .form {
+        height: 850px;
     }
 }

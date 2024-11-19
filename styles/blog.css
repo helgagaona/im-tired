@@ -1,11 +1,11 @@
+
 .grid-container {
     width: 90%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 15px;
-    margin: 25px;
-    margin: 0 auto;
-    
+    margin: 0 auto;   
+    margin-bottom: 200px; 
 }
 .grid-item {
     background-color: white;
@@ -32,9 +32,8 @@ img {
 }
 @media (max-width: 768px) {
     .grid-container {
-      display: grid;
-      grid-template-columns: 1fr;
-      margin: 0 auto;
-      width: 90%;
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
     }
   }

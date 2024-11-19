@@ -1,85 +1,215 @@
-
-.serviced {
+/* General Styles */
+ 
+h1, h2, h3, p {
+    margin-bottom: 1rem;
+  }
+  
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: #333; /* Dark gray background for header */
+    color: #fff;
+  }
+  
+  .nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0 1rem;
+  }
+  
+  /* Hero Section */
+  .hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: #333; /* Dark background for hero section */
+    color: #fff;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .cta-buttons button, button {
+    padding: 0.8rem 2rem;
+    margin: 0.5rem;
+    background-color: #620D87; /* Slightly lighter gray for buttons */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 250px;
+  }
+ 
+  
+  /* Services Section */
+  .services-section {
+    padding: 3rem 2rem;
+    text-align: center;
+    background-color: #111; /* Darker background for sections */
+  }
+  
+  .services-grid {
+    margin-top: 50px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    height: 400px;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: repeat(2, 
+    1fr);
+    grid-gap: 20px;
+  }
+  .website-design {
+    grid-column: 2 / 3;
+    grid-row: 1 / 4;
+    border-radius: 35px;
+    width: 100%;
+    height: 650px;
+    background-color: red;
+    background-image: url('https://cdn.dribbble.com/userupload/10418687/file/original-389a5e71a2276e797be17ea8ec01ab0a.png?resize=752x'); /* Ruta de la imagen */
+    background-size: cover; /* Ajusta el tamaño de la imagen */
+    background-repeat: no-repeat; /* Evita que se repita */
+    background-position: top; /* Centra la imagen */
+  }
+  .service1 {
+    grid-column: 1 / 2 ;
+  }
+  .service2 {
+    grid-column: 3 / 4 ;
+  }
+  .service3 {
+    grid-column: 1 / 2 ;
+  }
+  .service4 {
+    grid-column: 3 / 4 ;
+  }
+  .service h3 {
+    margin-top: 1rem;
+  }
+  .service h3 {
+    margin-top: 1rem;
+  }
+  .app-design {
+    grid-column: 2 / 3;
+    grid-row: 1 / 4;
+    border-radius: 35px;
+    width: 100%;
+    height: 650px;
+    background-color: red;
+    background-image: url('https://cdn.dribbble.com/userupload/15923161/file/original-f14b1f6910cab67c2565d9a97004bfcd.png?resize=752x'); /* Ruta de la imagen */
+    background-size: cover; /* Ajusta el tamaño de la imagen */
+    background-repeat: no-repeat; /* Evita que se repita */
+    background-position: center; /* Centra la imagen */
+  }
+  /* Process Section */
+  .process {
+    padding: 3rem 2rem;
+    background-color: #111; /* Dark background */
+    text-align: center;
+  }
+  
+  .process-steps {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    grid-gap: 20px;
+  }
+  
+  .icon-step {
+    width: 50px;
+    margin-bottom: 20px;
+  }
+
+  .step {
+    width: 16%;
+    background-color: #222; /* Darker background for steps */
+    padding: 1rem;
+    border: 1px solid #444;
+    border-radius: 20px;
+    min-width: 250px;
+    margin-bottom: 25px;
+  }
+  
+  /* Call to Action Section */
+  .cta {
+    text-align: center;
+    padding: 3rem 2rem;
+    background-color: #333; /* Dark gray background */
+    color: #fff;
+
+  }
+
+  .cta-buttons button {
+    padding: 0.8rem 2rem;
+    margin: 0.5rem;
+    background-color: #620D87; /* Green color for CTA buttons */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 250px;
+  }
+
+  /* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3, p {
+    margin-bottom: 1rem;
+  }
+  
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-}
-
-.servicio {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 25px;
-    width: 90%;
+    padding: 1rem 2rem;
+    background-color: #222; /* Darker gray for the header */
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2); /* Light shadow for header */
+  }
+  
+  .nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0 1rem;
+    font-size: 1.1rem;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .nav a:hover {
+    color: #4CAF50; /* Green color on hover */
+  }
+  
+  /* Hero Section */
+  .hero {
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.servicio h2 {
-    margin-top: 0;
-    color: #620D87;
-}
-p {
-    font-size: 16px;
-}
-.price {
-    font-size: 1.5rem;
-    color: #28a745;
-    font-weight: bold;
-}
-
-.grid-steps {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    text-align: center;
-}
-.step {
-    padding: 30px;
-    color: white;
-}
-.step p {
-    font-size: 13px;
-    margin-top: 15px;
-}
-h1 {
-    color:white;
-    text-align: center;
-    font-size: 50px;
-}
-.icon {
-    width: 20px;
-}
-@media (max-width: 768px) {
-    .grid-steps {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        width: 90%;
-        margin: 0 auto;
+    padding: 5rem 2rem;
+    background: linear-gradient(to bottom right, #333, #000); /* Gradient effect for hero */
+    color: #fff;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  @media (max-width: 768px) {
+    .services-grid {
+      display: flex;
+      flex-wrap: wrap;
     }
-    .serviced {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-gap: 10px;
-        height: 770px;
-        margin-bottom: 100px;
-        margin: 10px;
-        width: 90%;
-        height: auto;
-        margin: 0 auto;
+    .website-design, .app-design {
+      display:none;
     }
     .step {
-        padding: 10px;
+      width: 100%;
     }
-    .servicio {
-        margin: 0 auto;
-    }
-    h1 {
-        font-size: 25px;
-        margin-bottom: 20px;
-    }
-    .footer {
-        position: relative;
-        bottom: 0px;
-    }
-}
+  }
