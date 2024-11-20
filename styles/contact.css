@@ -1,14 +1,41 @@
-
 .container {
-    width:60%;
+    width:100%;
     min-width: 400px;
     text-align: center;
     margin: 0 auto;
-    height: 760px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
 }
+.side-menu {
+    width: 30%;
 
+}
+.calc {
+    padding: 25px;
+    background-color: white;
+    border-radius: 25px;
+    margin-bottom: 25px;
+}
+.calcular {
+    padding: 8px 25px;
+    background-color: #620D87;
+    border-radius: 100px;
+}
+.side-menu img {
+    width: 20%;
+}
+.side-menu h1 {
+    font-size: 20px;
+}
+hr {
+    margin: 50px 0px 50px 0px;
+    width: 100%;
+}
 .form {
-    padding: 50px;
+    width: 60%;
+    padding: 25px;
     border-radius: 25px;
     height: 780px;
     background-color: white;
@@ -24,7 +51,7 @@ input, textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
-    border-radius: 20px;
+    border-radius: 4px;
     border: solid 1px #bbbbbb;
     cursor: pointer;
 }

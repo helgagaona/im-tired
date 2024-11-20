@@ -1,0 +1,142 @@
+.container p {
+    font-style: oblique;
+}
+/* Contenedor principal del formulario */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    color: white;
+    text-align: left;
+    align-items: center;
+}
+
+/* Estilo de los encabezados y etiquetas */
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+}
+/* Estilo de los campos de entrada y selección */
+input[type="number"],
+select,
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #333;
+    border: 1px solid #555;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Estilo para los botones */
+button {
+    background-color: #620D87;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 100px;
+}
+.space {
+    width: 60%;
+    height: 1px;
+}
+button:hover {
+    background-color: #8528ad;
+}
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #333;
+    border: 1px solid #555;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 16px;
+}
+input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #333;
+    border: 1px solid #555;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 16px;
+}
+textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: #333;
+    border: 1px solid #555;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 16px;
+}
+/* Estilo para el checkbox redondo y morado */
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #c36de7; /* Borde del checkbox */
+    border-radius: 50px; /* Bordes redondeados */
+    background-color: #111; /* Fondo oscuro */
+    appearance: none; /* Remueve el estilo predeterminado del checkbox */
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s, border-color 0.3s;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+form p {
+    font-size: 12px;
+}
+/* Estado marcado */
+input[type="checkbox"]:checked {
+    border-color: #9a31d7; /* Color del borde al marcar */
+}
+input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%; /* Centrado vertical */
+    left: 50%; /* Centrado horizontal */
+    width: 10px; /* Tamaño del punto */
+    height: 10px; /* Tamaño del punto */
+    background-color: #9a31d7; /* Color blanco del punto */
+    border-radius: 50%; /* Hace el punto circular */
+    transform: translate(-50%, -50%); /* Alineación perfecta en el centro */
+}
+
+/* Resultado final del cálculo */
+#result {
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+    color: #ff9900;
+    margin-bottom: 20px;
+}
+#additionalText {
+    font-size: 15px;
+    font-weight: 500;
+    color: white;
+    font-style: oblique;
+}
+/* Adaptación de los inputs y etiquetas en dispositivos pequeños */
+@media (max-width: 600px) {
+    form {
+        width: 100%;
+        padding: 15px;
+        gap: 10px;
+    }
+
+    label, input, select, button {
+        font-size: 14px;
+    }
+}

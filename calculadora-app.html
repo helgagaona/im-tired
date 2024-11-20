@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/calculadora.css">
+    <title>Calculadora de Precios - Desarrollo de Aplicaciones Web</title>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header class="navbar">
+        <div class="logo">
+            <img class="logo" src="/images/logo/dark.png" alt="logo">
+        </div>
+        <div class="nav">
+            <a href="index.html">Inicio</a>
+            <a href="about.html">Nosotros</a>
+            <a href="services.html">Servicios</a>
+            <a href="contact.html">Contacto</a>
+            <a href="portfolio.html">Portafolio</a>
+            <a href="blog.html">Blog</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div id="result">
+            <p id="priceText"></p>
+            <p id="additionalText"></p>
+        </div>
+
+        <form id="priceCalc" action="https://formsubmit.co/themadistudio@gmail.com" method="POST" onsubmit="return handleSubmit()">
+            <label>Tipo de Proyecto:</label>
+            <select id="projectType">
+                <option value="8000,10000|Aplicacion Basica">Aplicación básica</option>
+                <option value="20000,27000|Aplicacion Interactiva">Aplicación interactiva</option>
+            </select>
+
+            <label>Funciones adicionales:</label>
+            <p>Selecciona las funcionalidades que deseas añadir a tu aplicación web:</p>
+
+            <div class="space"></div>
+
+            <label for="login">Inicio de sesión de usuario</label>
+            <input type="checkbox" id="login" value="2500|Login">
+
+            <label for="userPanel">Panel de usuario personalizado</label>
+            <input type="checkbox" id="userPanel" value="3500|User Panel">
+
+            <label for="apiIntegration">Conexión con APIs externas</label>
+            <input type="checkbox" id="apiIntegration" value="5000|API Integration">
+
+            <label for="paymentGateway">Integración de pagos en línea</label>
+            <input type="checkbox" id="paymentGateway" value="8000|Payments">
+
+            <label for="chatSupport">Soporte en vivo mediante chat</label>
+            <input type="checkbox" id="chatSupport" value="3000|Live chat">
+
+            <label for="multilingual">Jugabilidad</label>
+            <input type="checkbox" id="jugabilidad" value="4000|Gaming">
+
+            <label>Diseño y funcionalidades personalizadas:</label>
+            <input type="checkbox" id="customDesign" />
+
+            <p>¿Necesitas ayuda para crear el contenido (textos, imágenes, videos) para tu página web?</p>
+
+            <label>Entrega urgente:</label>
+            <input type="checkbox" id="urgent" />
+
+            <p>¿Necesitas que el proyecto sea entregado en menos de 3 meses?</p>
+
+            <!-- Nueva opción para publicación en Play Store y App Store -->
+            <label>Publicar en:</label>
+            <div class="space"></div>
+
+            <label for="googlePlay">Google Play Store</label>
+            <input type="checkbox" id="googlePlay" value="10000|Google Play">
+
+            <label for="appleStore">Apple App Store</label>
+            <input type="checkbox" id="appleStore" value="12000|Apple Store">
+
+            <div class="space"></div>
+            <label>Tiempo de finalización:</label>
+            <select id="projectDuration">
+                <option value="1.3|Short Term">1-3 meses</option>
+                <option value="1|Medium Term">4-6 meses</option>
+                <option value="0.9|Long Term">7-12 meses</option>
+            </select>
+
+            <!-- Name Field -->
+            <label for="name">Nombre:</label> 
+            <input type="text" id="name" name="name" required placeholder="Ingresa tu nombre">
+
+            <!-- Email Field -->
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required placeholder="Ingresa tu correo electrónico">
+
+            <!-- Project Description Field -->
+            <label for="projectDescription">Descripción del proyecto:</label>
+            <textarea id="projectDescription" name="projectDescription" required placeholder="Describe tu proyecto"></textarea>
+
+            <!-- Calculate Button -->
+            <button type="button" onclick="submitQuote()">Solicitar Cotización</button>
+
+            <!-- Hidden Inputs for Price Data -->
+            <input type="hidden" name="minPrice" id="minPrice">
+            <input type="hidden" name="maxPrice" id="maxPrice">
+            <!-- Hidden Inputs for Selected Options -->
+            <input type="hidden" name="selectedOptions" id="selectedOptions">
+            <input type="hidden" name="_next" value="https://duxistudio.com/gracias.html">  
+        </form>
+    </div>
+
+    <script>
+        function calculatePrice() {
+            // Base del proyecto
+            const projectTypeValue = document.getElementById("projectType").value;
+            if (!projectTypeValue) return; // Validar que haya un valor seleccionado
+    
+            const projectType = projectTypeValue.split(',');
+            let minPrice = parseInt(projectType[0]) || 0; // Validar números
+            let maxPrice = parseInt(projectType[1]) || 0;
+    
+            // Funcionalidades adicionales seleccionadas
+            const selectedFunctions = document.querySelectorAll('input[type="checkbox"]:checked');
+            let selectedOptions = [];
+            selectedFunctions.forEach(function (checkbox) {
+                const checkboxValue = checkbox.value.split('|')[0]; // Obtener valor antes del separador
+                const parsedValue = parseInt(checkboxValue) || 0; // Validar número
+                minPrice += parsedValue;
+                maxPrice += parsedValue;
+                selectedOptions.push(checkbox.value.split('|')[1]); // Almacenar nombre de opción
+            });
+    
+            // Diseño personalizado
+            const customDesign = document.getElementById("customDesign").checked;
+            if (customDesign) {
+                minPrice += 7000;
+                maxPrice += 9000;
+                selectedOptions.push("Diseño personalizado");
+            }
+    
+            // Entrega urgente
+            const urgent = document.getElementById("urgent").checked;
+            if (urgent) {
+                minPrice = Math.round(minPrice * 1.2); // Incremento del 20%
+                maxPrice = Math.round(maxPrice * 1.3); // Incremento del 30%
+                selectedOptions.push("Entrega urgente");
+            }
+    
+            // Tiempo de finalización
+            const projectDurationValue = document.getElementById("projectDuration").value;
+            const projectDuration = parseFloat(projectDurationValue) || 1; // Validar número
+            minPrice = Math.round(minPrice * projectDuration);
+            maxPrice = Math.round(maxPrice * projectDuration);
+    
+            // Publicación en Play Store y App Store
+            const googlePlay = document.getElementById("googlePlay").checked;
+            if (googlePlay) {
+                minPrice += 10000;
+                maxPrice += 10000;
+                selectedOptions.push("Publicar en Google Play Store");
+            }
+    
+            const appleStore = document.getElementById("appleStore").checked;
+            if (appleStore) {
+                minPrice += 12000;
+                maxPrice += 12000;
+                selectedOptions.push("Publicar en Apple App Store");
+            }
+    
+            // Mostrar resultado
+            document.getElementById("priceText").innerText = `Costo estimado: ${minPrice.toLocaleString()} - ${maxPrice.toLocaleString()} MXN`;
+    
+            // Agregar texto personalizado debajo del costo
+            const additionalText = "Este es solo un estimado. Los costos finales pueden variar según los detalles específicos del proyecto.";
+            document.getElementById("additionalText").innerText = additionalText;
+    
+            // Set the hidden inputs
+            document.getElementById("minPrice").value = minPrice;
+            document.getElementById("maxPrice").value = maxPrice;
+            document.getElementById("selectedOptions").value = selectedOptions.join(', '); // Unir opciones seleccionadas
+        }
+    
+        function submitQuote() {
+            calculatePrice(); // Asegurarse de calcular el precio antes de enviar el formulario
+            document.getElementById("priceCalc").submit(); // Enviar el formulario
+        }
+    
+        function handleSubmit() {
+            // Manejar cualquier lógica adicional antes del envío si es necesario
+            return true; // Continuar con el envío del formulario
+        }
+    </script>
+    
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>2024 duxi studio</p>
+    </footer>
+</body>
+</html>

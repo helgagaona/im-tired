@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5530498496547836"
+    crossorigin="anonymous"></script>
+   <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-528569381"></script>
+<script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+
+ gtag('config', 'AW-528569381');
+</script>
+   <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4S00WHTVNV"></script>
+<script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+
+ gtag('config', 'G-4S00WHTVNV');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/calculadora.css">
+    <title>Calculadora de Precios - Desarrollo Web</title>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header class="navbar">
+        <div class="logo">
+            <img class="logo" src="/images/logo/dark.png" alt="logo">
+        </div>
+        <div class="nav">
+            <a href="index.html">Inicio</a>
+            <a href="about.html">Nosotros</a>
+            <a href="services.html">Servicios</a>
+            <a href="contact.html">Contacto</a>
+            <a href="portfolio.html">Portafolio</a>
+            <a href="blog.html">Blog</a>
+        </div>
+    </header>
+    <div class="container">
+        <div id="result">
+            <p id="priceText"></p>
+            <p id="additionalText"></p> <!-- This will display the custom text -->
+        </div>
+
+        <form id="priceCalc" action="https://formsubmit.co/themadistudio@gmail.com" method="POST">
+            <!-- Project Type Dropdown -->
+            <label for="projectType">Tipo de Proyecto:</label>
+            <select id="projectType" name="projectType">
+                <option value="8000,10000|Sitio Web Basico">Sitio web básico</option>
+                <option value="20000,27000|Tienda en linea">Tienda en línea</option>
+            </select>
+            
+            <!-- Additional Pages Field -->
+            <label for="pages">Número de páginas adicionales:</label>
+            <p>Todas los proyectos web cuentan con una página de Inicio, si deseas más páginas, indica cuantas</p>
+            <input type="number" id="pages" name="pages" value="0" min="0" placeholder="Cuántas páginas adicionales necesitas">
+
+            <!-- Custom Design Checkbox -->
+            <label for="customDesign">Diseño y contenido personalizado:</label>
+            <input type="checkbox" id="customDesign" name="customDesign">
+            <p>¿Necesitas ayuda para crear el contenido (textos, imágenes, videos) para tu página web?</p>
+
+            <!-- Urgent Delivery Checkbox -->
+            <label for="urgent">Entrega urgente:</label>
+            <input type="checkbox" id="urgent" name="urgent">
+            <p>¿Necesitas que el tiempo de entrega sea menor a 3 meses?</p>
+
+            <!-- Project Duration Dropdown -->
+            <label for="projectDuration">Tiempo de finalización:</label>
+            <select id="projectDuration" name="projectDuration">
+                <option value="1.3|Short Term">1-3 meses</option>
+                <option value="1|Medium Term">4-6 meses</option>
+                <option value="0.9|Long Term">7-12 meses</option>
+            </select>
+            <!-- Name Field -->
+            <label for="name">Nombre:</label> 
+            <input type="text" id="name" name="name" required placeholder="Ingresa tu nombre">
+            <!-- Email Field -->
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required placeholder="Ingresa tu correo electrónico">
+
+            <!-- Project Description Field -->
+            <label for="projectDescription">Descripción del proyecto:</label>
+            <textarea id="projectDescription" name="projectDescription" required placeholder="Describe tu proyecto"></textarea>
+
+            <!-- Calculate Button -->
+            <button type="button" onclick="submitQuote()">Solicitar Cotización</button>
+            
+            <!-- Hidden Inputs for Price Data -->
+            <input type="hidden" name="minPrice" id="minPrice">
+            <input type="hidden" name="maxPrice" id="maxPrice">
+            <!-- Redirect to a Thank You page -->
+            <input type="hidden" name="_next" value="https://duxistudio.com/gracias.html">
+        </form>
+    </div>
+
+    <script>
+        function submitQuote() {
+            // Base price based on project type
+            const projectType = document.getElementById("projectType").value.split(',');
+            let minPrice = parseInt(projectType[0]);
+            let maxPrice = parseInt(projectType[1]);
+
+            // Additional Pages Calculation
+            const extraPages = parseInt(document.getElementById("pages").value);
+            if (extraPages > 0) {
+                minPrice += extraPages * 1200; // Minimum for additional pages
+                maxPrice += extraPages * 1500; // Maximum for additional pages
+            }
+
+            // Custom Design Checkbox
+            const customDesign = document.getElementById("customDesign").checked;
+            if (customDesign) {
+                minPrice += 6000; // Add cost for custom design
+                maxPrice += 8000; // Add cost for custom design
+            }
+
+            // Urgent Delivery Checkbox
+            const urgent = document.getElementById("urgent").checked;
+            if (urgent) {
+                minPrice *= 1.2; // 20% increase for urgent delivery
+                maxPrice *= 1.3; // 30% increase for urgent delivery
+            }
+
+            // Duration of the project
+            const projectDuration = parseFloat(document.getElementById("projectDuration").value);
+            minPrice *= projectDuration; // Adjust price based on duration
+            maxPrice *= projectDuration;
+
+            // Update the price text on the page
+            document.getElementById("priceText").innerText = `Costo estimado: ${minPrice.toLocaleString()} - ${maxPrice.toLocaleString()} MXN`;
+
+            // Custom message about pricing
+            const additionalText = "Este es solo un estimado. Los costos finales pueden variar según los detalles específicos del proyecto.";
+            document.getElementById("additionalText").innerText = additionalText;
+
+            // Set hidden fields with the calculated prices
+            document.getElementById("minPrice").value = minPrice;
+            document.getElementById("maxPrice").value = maxPrice;
+
+            // Submit the form
+            document.getElementById("priceCalc").submit();
+        }
+    </script>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <p>2024 duxi studio</p>
+</footer>
+</body>
+</html>
