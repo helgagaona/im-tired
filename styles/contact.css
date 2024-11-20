@@ -77,10 +77,16 @@ button {
 }
 @media (max-width: 768px) {
     .container {
-        width: 80%;
-        height: 900px;
+        gap: 0px;
     }
     .form {
-        height: 850px;
+        width: 100%;
+        border-radius: 0px;
+    }
+    .calc {
+        border-radius: 1px;
+    }
+    .side-menu {
+        width: 100%;
     }
 }

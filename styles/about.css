@@ -21,7 +21,7 @@
 .banner {
     position: relative;
     width: 100%;
-    height: 300px; /* Ajusta la altura del banner */
+    height: 330px; /* Ajusta la altura del banner */
     background-image: url('https://cdn.dribbble.com/userupload/14108396/file/original-46845cd257ba3768bb9f8c28029cb4e3.png?resize=752x'); /* Cambia esta URL por la de tu imagen */
     background-size: cover;
     background-position: center;

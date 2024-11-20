@@ -22,13 +22,8 @@
             <a href="blog.html">Blog</a>
         </div>
     </header>
-
+    <h1>Calcula el costo de tu App</h1>
     <div class="container">
-        <div id="result">
-            <p id="priceText"></p>
-            <p id="additionalText"></p>
-        </div>
-
         <form id="priceCalc" action="https://formsubmit.co/themadistudio@gmail.com" method="POST" onsubmit="return handleSubmit()">
             <label>Tipo de Proyecto:</label>
             <select id="projectType">
@@ -100,7 +95,7 @@
             <textarea id="projectDescription" name="projectDescription" required placeholder="Describe tu proyecto"></textarea>
 
             <!-- Calculate Button -->
-            <button type="button" onclick="submitQuote()">Solicitar Cotización</button>
+            <button type="button" onclick="submitQuote(); scrollToTop()">Calcular Costo</button>
 
             <!-- Hidden Inputs for Price Data -->
             <input type="hidden" name="minPrice" id="minPrice">
@@ -109,6 +104,12 @@
             <input type="hidden" name="selectedOptions" id="selectedOptions">
             <input type="hidden" name="_next" value="https://duxistudio.com/gracias.html">  
         </form>
+        <div class="right-container">
+            <div id="result">
+                <p id="priceText"></p>
+                <p id="additionalText"></p>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -191,6 +192,14 @@
             // Manejar cualquier lógica adicional antes del envío si es necesario
             return true; // Continuar con el envío del formulario
         }
+        function scrollToTop() {
+    if (window.innerWidth > 768) { // Solo ejecuta en pantallas mayores a 768px
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+}
     </script>
     
 
