@@ -131,14 +131,14 @@ input[type="checkbox"]:checked::after {
     text-align: center;
     color: #ff9900;
     margin-bottom: 20px;
-    width: 40%;
+    width: 100%;
 }
-/*.right-container {
-    width: 40%;
-    background-image: url("paper.gif");
-    background-color: #cccccc;
+.right-container {
+    width: 20%;
+    /*background-image: url("paper.gif");
+    background-color: #cccccc;*/
     border-radius: 25px;
-} */
+} 
 #additionalText {
     font-size: 15px;
     font-weight: 500;
