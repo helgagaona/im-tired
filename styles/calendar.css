@@ -1,0 +1,14 @@
+.content {
+    background-color: white;
+    border-radius: 25px;
+    margin: 25px;
+}
+iframe {
+    min-height: 850px;
+}
+@media (max-width: 768px) {
+    iframe {
+      min-height: 2100px;
+    }
+    
+  }
