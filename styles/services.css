@@ -31,7 +31,7 @@ h1, h2, h3, p {
     font-size: 2.5rem;
   }
   
-  .cta-buttons button, button {
+  .cta-buttons .button, .button {
     padding: 0.8rem 2rem;
     margin: 0.5rem;
     background-color: #620D87; /* Slightly lighter gray for buttons */
@@ -39,6 +39,9 @@ h1, h2, h3, p {
     border: none;
     cursor: pointer;
     border-radius: 250px;
+    width: 200px;
+    margin: 0 auto;
+    margin-bottom: 10px;
   }
  
   
